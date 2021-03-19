@@ -55,6 +55,7 @@
 			        </div>
 
 				    <?php
+					  /*
 				    	$sql = "SELECT * FROM votes WHERE voters_id = '".$voter['id']."'";
 				    	$vquery = $conn->query($sql);
 				    	if($vquery->num_rows > 0){
@@ -66,12 +67,13 @@
 				    		<?php
 				    	}
 				    	else{
+						*/	
 				    		?>
 			    			<!-- Voting Ballot -->
 						    <form method="POST" id="ballotForm" action="submit_ballot.php">
 				        		<?php
 				        			include 'includes/slugify.php';
-
+                                    $conn = new mysqli('localhost', 'root', '', 'sports');
 				        			$candidate = '';
 				        			$sql = "SELECT * FROM positions ORDER BY priority ASC";
 									$query = $conn->query($sql);
@@ -144,7 +146,7 @@
 				        	</form>
 				        	<!-- End Voting Ballot -->
 				    		<?php
-				    	}
+				    	//}
 
 				    ?>
 
@@ -155,7 +157,7 @@
 	    </div>
 	  </div>
   
-  	<?php include 'includes/footer.php'; ?>
+  	<?php //include 'includes/footer.php'; ?>
   	<?php include 'includes/ballot_modal.php'; ?>
 </div>
 
