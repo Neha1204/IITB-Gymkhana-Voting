@@ -12,11 +12,11 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   	<div class="login-logo">
-  		<b>Voting System</b>
+  		<b>IITB Gymkhana Voting</b>
   	</div>
   
   	<div class="login-box-body">
-    	<p class="login-box-msg">Sign in to start your session</p>
+    	<p class="login-box-msg">Sign in to vote</p>
 
     	<form action="login.php" method="POST">
       		<div class="form-group has-feedback">
@@ -30,7 +30,8 @@
       		<div class="row">
     			<div class="col-xs-4">
           			<button type="submit" class="btn btn-primary btn-block btn-flat" name="login"><i class="fa fa-sign-in"></i> Sign In</button>
-        		</div>
+        		</div>				
+          	    <a href='register.php'> <b>Not yet Registered? Register</b> </a>
       		</div>
     	</form>
   	</div>

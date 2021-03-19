@@ -57,7 +57,7 @@
                 </thead>
                 <tbody>
                   <?php
-				    $conn = new mysqli('localhost', 'root', '', 'sports');
+				    $conn = new mysqli('localhost', 'root', '', 'iitbvoting');
                     $sql = "SELECT * FROM voters";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
