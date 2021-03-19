@@ -4,7 +4,7 @@
 <div class="wrapper">
 
   <?php include 'includes/navbar.php'; ?>
-  <?php include 'includes/menubar.php'; ?>
+  <?php //include 'includes/menubar.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -64,7 +64,7 @@
                       echo "
                         <tr>
 						  <td>
-					         <a href='../admin/voters.php'>".$row['title']."</a>
+					         <a href='../admin/home.php?data='".$row['title'].">".$row['title']."</a>
 		                  </td>
                           <td>".$row['starttime']."</td>
                           <td>".$row['endtime']."</td>
@@ -86,7 +86,7 @@
     </section>   
   </div>
     
-  <?php include 'includes/footer.php'; ?>
+  <?php //include 'includes/footer.php'; ?>
   <?php include 'includes/election_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>

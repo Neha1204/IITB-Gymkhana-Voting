@@ -59,6 +59,7 @@
                 </thead>
                 <tbody>
                   <?php
+				    $conn = new mysqli('localhost', 'root', '', 'sports');
                     $sql = "SELECT * FROM voters";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
@@ -89,7 +90,7 @@
     </section>   
   </div>
     
-  <?php include 'includes/footer.php'; ?>
+  <?php //include 'includes/footer.php'; ?>
   <?php include 'includes/voters_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>

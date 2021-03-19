@@ -8,6 +8,7 @@
 		$position = $_POST['position'];
 		$platform = $_POST['platform'];
 
+        $conn = new mysqli('localhost', 'root', '', 'sports');
 		$sql = "UPDATE candidates SET firstname = '$firstname', lastname = '$lastname', position_id = '$position', platform = '$platform' WHERE id = '$id'";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Candidate updated successfully';

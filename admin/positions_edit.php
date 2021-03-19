@@ -6,6 +6,7 @@
 		$description = $_POST['description'];
 		$max_vote = $_POST['max_vote'];
 
+        $conn = new mysqli('localhost', 'root', '', 'sports');
 		$sql = "UPDATE positions SET description = '$description', max_vote = '$max_vote' WHERE id = '$id'";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Position updated successfully';

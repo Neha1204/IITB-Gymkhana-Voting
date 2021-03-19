@@ -11,6 +11,7 @@
 			move_uploaded_file($_FILES['photo']['tmp_name'], '../images/'.$filename);	
 		}
 
+        $conn = new mysqli('localhost', 'root', '', 'sports');
 		$sql = "INSERT INTO candidates (position_id, firstname, lastname, photo, platform) VALUES ('$position', '$firstname', '$lastname', '$filename', '$platform')";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Candidate added successfully';
@@ -21,7 +22,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Fill up add form first';
+		//$_SESSION['error'] = 'Fill up add form first';
 	}
 
 	header('location: candidates.php');

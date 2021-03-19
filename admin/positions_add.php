@@ -5,6 +5,7 @@
 		$description = $_POST['description'];
 		$max_vote = $_POST['max_vote'];
 
+        $conn = new mysqli('localhost', 'root', '', 'sports');
 		$sql = "SELECT * FROM positions ORDER BY priority DESC LIMIT 1";
 		$query = $conn->query($sql);
 		$row = $query->fetch_assoc();
@@ -21,7 +22,7 @@
 
 	}
 	else{
-		$_SESSION['error'] = 'Fill up add form first';
+		//$_SESSION['error'] = 'Fill up add form first';
 	}
 
 	header('location: positions.php');

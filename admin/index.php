@@ -1,14 +1,14 @@
 <?php
   	session_start();
   	if(isset($_SESSION['admin'])){
-    	header('location:home.php');
+    	header('location: ../new_election/index.php');
   	}
 ?>
 <?php include 'includes/header.php'; ?>
 <body class="hold-transition login-page">
 <div class="login-box">
   	<div class="login-logo">
-  		<b>Voting System</b>
+  		<b>IITB Gymkhana Voting</b>
   	</div>
   
   	<div class="login-box-body">

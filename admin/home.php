@@ -1,6 +1,21 @@
 <?php include 'includes/session.php'; ?>
 <?php include 'includes/slugify.php'; ?>
 <?php include 'includes/header.php'; ?>
+
+<?php
+  if(isset($_GET["data"]))
+                {
+                   $data = $_GET["data"];  
+                   //echo "<h3>Hello ".$data." Neha</h3>";				   
+                }
+				else{
+					
+					$_SESSION['error'] = 'Fill up add form first';
+				}	
+			  
+?>			    
+
+
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
@@ -51,6 +66,8 @@
           <div class="small-box bg-aqua">
             <div class="inner">
               <?php
+			    
+			    $conn = new mysqli('localhost', 'root', '', 'gymka');
                 $sql = "SELECT * FROM positions";
                 $query = $conn->query($sql);
 
@@ -167,7 +184,7 @@
       </section>
       <!-- right col -->
     </div>
-  	<?php include 'includes/footer.php'; ?>
+  	<?php //include 'includes/footer.php'; ?>
 
 </div>
 <!-- ./wrapper -->

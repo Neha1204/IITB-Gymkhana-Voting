@@ -4,7 +4,9 @@
 
 	if(isset($_POST['login'])){
 		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$password = md5($_POST['password']);
+		
+		echo $password;
 
 		$sql = "SELECT * FROM admin WHERE username = '$username'";
 		$query = $conn->query($sql);
@@ -14,10 +16,11 @@
 		}
 		else{
 			$row = $query->fetch_assoc();
-			if(password_verify($password, $row['password'])){
+			if($password == $row['password']){
 				$_SESSION['admin'] = $row['id'];
 			}
 			else{
+				echo $password;
 				$_SESSION['error'] = 'Incorrect password';
 			}
 		}

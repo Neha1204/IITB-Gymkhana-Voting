@@ -61,6 +61,7 @@
                 </thead>
                 <tbody>
                   <?php
+				    $conn = new mysqli('localhost', 'root', '', 'sports');
                     $sql = "SELECT *, candidates.id AS canid FROM candidates LEFT JOIN positions ON positions.id=candidates.position_id ORDER BY positions.priority ASC";
                     $query = $conn->query($sql);
                     while($row = $query->fetch_assoc()){
@@ -93,7 +94,7 @@
     </section>   
   </div>
     
-  <?php include 'includes/footer.php'; ?>
+  <?php //include 'includes/footer.php'; ?>
   <?php include 'includes/candidates_modal.php'; ?>
 </div>
 <?php include 'includes/scripts.php'; ?>

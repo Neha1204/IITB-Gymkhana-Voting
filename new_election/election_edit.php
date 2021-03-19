@@ -3,7 +3,7 @@
 
 	if(isset($_POST['edit'])){
 		$id = $_POST['id'];
-		$title = $_POST['title'];
+		//$title = $_POST['title'];
 		$starttime = $_POST['starttime'];
 		$endtime = $_POST['endtime'];
 
@@ -12,13 +12,14 @@
 		$row = $query->fetch_assoc();
 
 		
-		$sql = "UPDATE election SET title = '$title', starttime = '$starttime', endtime = '$endtime' WHERE id = '$id'";
+		$sql = "UPDATE election SET starttime = '$starttime', endtime = '$endtime' WHERE id = '$id'";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Election updated successfully';
 		}
 		else{
 			$_SESSION['error'] = $conn->error;
 		}
+		
 	}
 	else{
 		$_SESSION['error'] = 'Fill up edit form first';
