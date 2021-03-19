@@ -13,6 +13,7 @@
 		$set = '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
 		$voter = substr(str_shuffle($set), 0, 15);
 
+        $conn = new mysqli('localhost', 'root', '', 'sports');
 		$sql = "INSERT INTO voters (voters_id, password, firstname, lastname, photo) VALUES ('$voter', '$password', '$firstname', '$lastname', '$filename')";
 		if($conn->query($sql)){
 			$_SESSION['success'] = 'Voter added successfully';

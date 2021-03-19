@@ -45,17 +45,15 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="box">
-            <div class="box-header with-border">
-              <a href="#addnew" data-toggle="modal" class="btn btn-primary btn-sm btn-flat"><i class="fa fa-plus"></i> New</a>
-            </div>
+            
             <div class="box-body">
               <table id="example1" class="table table-bordered">
                 <thead>
-                  <th>Lastname</th>
                   <th>Firstname</th>
+                  <th>Lastname</th>
                   <th>Photo</th>
                   <th>Voters ID</th>
-                  <th>Tools</th>
+                 
                 </thead>
                 <tbody>
                   <?php
@@ -66,17 +64,14 @@
                       $image = (!empty($row['photo'])) ? '../images/'.$row['photo'] : '../images/profile.jpg';
                       echo "
                         <tr>
-                          <td>".$row['lastname']."</td>
                           <td>".$row['firstname']."</td>
+                          <td>".$row['lastname']."</td>
                           <td>
                             <img src='".$image."' width='30px' height='30px'>
-                            <a href='#edit_photo' data-toggle='modal' class='pull-right photo' data-id='".$row['id']."'><span class='fa fa-edit'></span></a>
+                            
                           </td>
                           <td>".$row['voters_id']."</td>
-                          <td>
-                            <button class='btn btn-success btn-sm edit btn-flat' data-id='".$row['id']."'><i class='fa fa-edit'></i> Edit</button>
-                            <button class='btn btn-danger btn-sm delete btn-flat' data-id='".$row['id']."'><i class='fa fa-trash'></i> Delete</button>
-                          </td>
+                         
                         </tr>
                       ";
                     }

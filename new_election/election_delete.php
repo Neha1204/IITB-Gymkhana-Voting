@@ -26,6 +26,7 @@
            die('Could not connect: ' . mysql_error());
         }
 		
+		$title = str_replace(' ', '', $title);
 		$sql = "DROP DATABASE ".$title;
 	
         if(!$connec->query($sql)) {

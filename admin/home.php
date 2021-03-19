@@ -67,7 +67,7 @@
             <div class="inner">
               <?php
 			    
-			    $conn = new mysqli('localhost', 'root', '', 'gymka');
+			    $conn = new mysqli('localhost', 'root', '', 'sports');
                 $sql = "SELECT * FROM positions";
                 $query = $conn->query($sql);
 

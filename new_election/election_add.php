@@ -24,6 +24,7 @@
            die("Connection failed: " . $connec->connect_error);
         } 
 
+        $title = str_replace(' ', '', $title);
 		$sql = "CREATE DATABASE ".$title;
         if ($connec->query($sql) === TRUE) {
             $_SESSION['success'] = 'Election added successfully';
