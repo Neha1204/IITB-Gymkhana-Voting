@@ -60,7 +60,7 @@
     			    <div class="col-xs-4">
           			  <button type="submit" class="btn btn-primary btn-block btn-flat" name="add"><i class="fa fa-sign-in"></i> Register</button>
         		    </div>
-          	     	<a href='login.php'> Registered? Login </a>
+          	     	<a href='index.php'> Registered? Login </a>
       		    </div>
   	</div>
   	<?php
