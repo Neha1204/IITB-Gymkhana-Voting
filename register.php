@@ -18,7 +18,7 @@
   	</div>
   
   	<div class="login-box-body">
-    	<p class="login-box-msg">Sign in to vote</p>
+    	<p class="login-box-msg">Register to vote</p>
 
          <form class="form-horizontal" method="POST" action="voters_add.php" enctype="multipart/form-data">
                 <div class="form-group">
