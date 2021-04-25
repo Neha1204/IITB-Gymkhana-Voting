@@ -5,6 +5,7 @@
 
 	$output = array('error'=>false,'list'=>'');
 
+    $conn = new mysqli('localhost', 'root', '', 'sports');
 	$sql = "SELECT * FROM positions";
 	$query = $conn->query($sql);
 

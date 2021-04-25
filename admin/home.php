@@ -5,12 +5,9 @@
 <?php
   if(isset($_GET["data"]))
                 {
-                   $data = $_GET["data"];  
-                   //echo "<h3>Hello ".$data." Neha</h3>";				   
+                   $data = $_GET["data"];  				   
                 }
 				else{
-					
-					$_SESSION['error'] = 'Fill up add form first';
 				}	
 			  
 ?>			    
@@ -122,28 +119,7 @@
             <a href="voters.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <?php
-                $sql = "SELECT * FROM votes GROUP BY voters_id";
-                $query = $conn->query($sql);
-
-                echo "<h3>".$query->num_rows."</h3>";
-              ?>
-
-              <p>Voters Voted</p>
-            </div>
-            <div class="icon">
-              <i class="fa fa-edit"></i>
-            </div>
-            <a href="votes.php" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
-      </div>
+        
 
       <div class="row">
         <div class="col-xs-12">
@@ -199,7 +175,7 @@
     $carray = array();
     $varray = array();
     while($crow = $cquery->fetch_assoc()){
-      array_push($carray, $crow['lastname']);
+      array_push($carray, $crow['firstname']);
       $sql = "SELECT * FROM votes WHERE candidate_id = '".$crow['id']."'";
       $vquery = $conn->query($sql);
       array_push($varray, $vquery->num_rows);

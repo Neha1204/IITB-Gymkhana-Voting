@@ -8,6 +8,7 @@
 		}
 		else{
 			$_SESSION['post'] = $_POST;
+			$conn = new mysqli('localhost', 'root', '', 'sports');
 			$sql = "SELECT * FROM positions";
 			$query = $conn->query($sql);
 			$error = false;
@@ -23,7 +24,7 @@
 						}
 						else{
 							foreach($_POST[$position] as $key => $values){
-								$sql_array[] = "INSERT INTO votes (voters_id, candidate_id, position_id) VALUES ('".$voter['id']."', '$values', '$pos_id')";
+								$sql_array[] = "INSERT INTO votes (candidate_id, position_id) VALUES ('$values', '$pos_id')";
 							}
 
 						}
@@ -31,7 +32,7 @@
 					}
 					else{
 						$candidate = $_POST[$position];
-						$sql_array[] = "INSERT INTO votes (voters_id, candidate_id, position_id) VALUES ('".$voter['id']."', '$candidate', '$pos_id')";
+						$sql_array[] = "INSERT INTO votes ( candidate_id, position_id) VALUES ('$candidate', '$pos_id')";
 					}
 
 				}
