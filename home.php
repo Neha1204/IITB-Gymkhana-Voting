@@ -158,7 +158,6 @@
 	    </div>
 	  </div>
   
-  	<?php //include 'includes/footer.php'; ?>
   	<?php include 'includes/ballot_modal.php'; ?>
 </div>
 
