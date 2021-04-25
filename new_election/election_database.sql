@@ -71,7 +71,8 @@ CREATE TABLE `voters` (
   `password` varchar(60) NOT NULL,
   `firstname` varchar(30) NOT NULL,
   `lastname` varchar(30) NOT NULL,
-  `photo` varchar(150) NOT NULL
+  `photo` varchar(150) NOT NULL,
+  `voted` BIT NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------

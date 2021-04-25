@@ -55,25 +55,26 @@
 			        </div>
 
 				    <?php
-					  /*
-				    	$sql = "SELECT * FROM votes WHERE voters_id = '".$voter['id']."'";
+					    $conn = new mysqli('localhost', 'root', '', 'sports');
+				    	$sql = "SELECT * FROM voters WHERE id = '".$voter['id']."'";
 				    	$vquery = $conn->query($sql);
-				    	if($vquery->num_rows > 0){
+						$vrow = $vquery->fetch_assoc();
+				  
+						if($vrow !=NULL && $vrow['voted'] == 1){
 				    		?>
 				    		<div class="text-center">
 					    		<h3>You have already voted for this election.</h3>
-					    		<a href="#view" data-toggle="modal" class="btn btn-flat btn-primary btn-lg">View Ballot</a>
+					    	
 					    	</div>
 				    		<?php
 				    	}
 				    	else{
-						*/	
+							
 				    		?>
 			    			<!-- Voting Ballot -->
 						    <form method="POST" id="ballotForm" action="submit_ballot.php">
 				        		<?php
 				        			include 'includes/slugify.php';
-                                    $conn = new mysqli('localhost', 'root', '', 'sports');
 				        			$candidate = '';
 				        			$sql = "SELECT * FROM positions ORDER BY priority ASC";
 									$query = $conn->query($sql);
@@ -146,8 +147,8 @@
 				        	</form>
 				        	<!-- End Voting Ballot -->
 				    		<?php
-				    	//}
-
+				    	}
+						
 				    ?>
 
 	        	</div>

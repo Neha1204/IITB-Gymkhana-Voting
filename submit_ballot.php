@@ -23,6 +23,8 @@
 							$_SESSION['error'][] = 'You can only choose '.$row['max_vote'].' candidates for '.$row['description'];
 						}
 						else{
+							$updat = "UPDATE voters SET voted = 1 WHERE id = '".$voter['id']."'";
+							$que = $conn->query($updat);
 							foreach($_POST[$position] as $key => $values){
 								$sql_array[] = "INSERT INTO votes (candidate_id, position_id) VALUES ('$values', '$pos_id')";
 							}
@@ -31,6 +33,8 @@
 						
 					}
 					else{
+						$updat = "UPDATE voters SET voted = 1 WHERE id = '".$voter['id']."'";
+					    $que = $conn->query($updat);
 						$candidate = $_POST[$position];
 						$sql_array[] = "INSERT INTO votes ( candidate_id, position_id) VALUES ('$candidate', '$pos_id')";
 					}
